@@ -9,7 +9,9 @@ use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -20,7 +22,12 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(3);
+        if(Auth::user()->isAdmin()){
+            $projects = Project::paginate(5);
+        } else {
+            $userId = Auth::id();
+            $projects = Project::where('user_id', $userId)->paginate(5);
+        }
         return view('admin.projects.index', compact('projects'));
     }
 
