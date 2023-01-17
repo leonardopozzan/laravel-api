@@ -1,0 +1,114 @@
+@use './variables' as *;
+@import '~bootstrap/scss/bootstrap';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+}
+#admin{
+    .side-bar{
+        width: 25%;
+        min-width: 250px;
+        min-height: 100vh;
+        background-color: $dark-blue;
+        padding: 1rem;
+        ul{
+            .title{
+                color: $white;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: 0.8rem;
+            }
+            li{
+                font-size: 1.1rem;
+                padding: 0.8rem;
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+        a{
+            color: white;
+        }
+    }
+    main{
+        .projects-list{
+            margin-top: 50px;
+            .table-container{
+                width: 90%;
+                margin: auto;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.9em;
+                font-family: sans-serif;
+                min-width: 400px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                thead tr {
+                    background-color: $light-blue;
+                    color: $white;
+                    text-align: left;
+                }
+                th,td {
+                    padding: 12px 15px;
+                }
+                tbody tr {
+                    border-bottom: 1px solid $border-grey;
+                }
+                tbody tr:nth-of-type(even) {
+                    background-color: $light-grey;
+
+                }
+                tbody tr:last-of-type {
+                    border-bottom: 2px solid $light-blue;
+                }
+                tbody tr.active-row {
+                    font-weight: bold;
+                    color: $light-blue;
+                }
+            }
+        }
+        .my-form {
+            width: 70%;
+            margin: auto;
+            background-color: $light-grey;
+            border-radius: 3rem;
+            padding: 3rem 8rem;
+            input, select{
+                border-radius: 5px;
+                outline: none;
+            }
+            & > * {
+                font-size: 1.1rem;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            button{
+                font-size: 1.2rem;            
+            }
+        }
+        .container-card{
+            width: 80%;
+            margin: 50px auto;
+            .my-card{
+
+                .img-box{
+                    width: 75%;
+                }
+            }
+        }
+    }
+}
