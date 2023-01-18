@@ -73,8 +73,8 @@
             <div>
                 <label for="languages">Linguaggi</label> <br>
                 @foreach ($languages as $language)
-                    <input type="checkbox" name="languages[]" value="{{$language->id}}" {{old('languages') ? (old('languages')->contains($language->id)) ? 'checked' : '' : ''}}>
-                    <span class="text-capitalize">{{$language->name}}</span>
+                    <input type="checkbox" class="form-check-input" id="{{$language->slug}}" name="languages[]" value="{{$language->id}}" {{in_array( $language->id, old("languages", []) ) ? 'checked' : ''}}>
+                    <span class="text-capitalize pe-2">{{$language->name}}</span>
                 @endforeach
                 {{-- @error('languages')
                 <div class="invalid-feedback">{{ $message }}</div>
