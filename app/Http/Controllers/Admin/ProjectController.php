@@ -9,7 +9,6 @@ use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
-use App\Models\User;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
